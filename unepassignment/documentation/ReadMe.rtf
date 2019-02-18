@@ -1,0 +1,29 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 UNV Practical Questions Assignment\
+-------------------------------------------------\
+Installation Guide\
+\
+1. We will start by readying the database. In the \'91unepassignment\'92 folder, navigate to the path: \'91documentation/Resources/SQL/Dumps/\'91 and in this folder there is a file called \'91unepassignment.sql\'92. This file bears the database schema. Import this table to your MySQL environment, and be sure to maintain the same database name\
+\
+2. Once your Database and tables are imported, we can begin to bring in the source code. Copy the entire \'91unepassignment\'92 folder and place it in your web host. Remember to make note of where you place the folder with regards to the web host root, as you will need this information at a subsequent step.\
+\
+3. Identify the \'91.htaccess\'92 file in the \'91unepassignment\'92 root folder. Upon opening the file, you will see an entry for the \'91RewriteBase\'92. Make sure this references where the \'91unepassignment\'92 folder sits in your localhost, e.g. if it sits directly on the root, the rewrite path would be 'RewriteBase /unepassignment/\'91. \
+\
+4. Once the above is done, we will need to configure the CodeIgniter PHP framework to get it up and running. \
+- First to configure is the \'91$config['base_url\'92]\'92, which code igniter needs so as to be able to identify where the root of the application will sit. Insert the FQDN where the folder is nested, e.g. \'91http://localhost/unepassignment\'92 if the folder sits directly in the root. \
+This configuration is done on the file: unepassignment/application/config/config.php\
+\
+- Second to configure is the value for the index page. Since we are using the .htaccess file above to handle URL rewriting, we want to make sure the $config['index_page'] setting points to an empty string.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 This configuration is done on the file: unepassignment/application/config/config.php\
+\
+- Third we want to get the database up and running, to allow CRUD operations. You will need to configure the $db['default'] array, by setting the username and password for your MySQL instance. If you renamed the database at step 1, you will need to update the databasename line to mirror the new name\
+\
+\
+With these few steps, the system should now be up and running.}
